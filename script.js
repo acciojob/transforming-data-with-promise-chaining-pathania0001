@@ -15,7 +15,11 @@ const promise = (value)=>{
 	})
 }
 button.onclick = ()=>{
-  const {value} = input;
+   const value = parseFloat(input.value);
+  if (isNaN(value)) {
+    output.innerText = "Please enter a valid number.";
+    return;
+  }
   const prom = promise(value)
 	.then( async(data) => {  
 		await wait(2000) 
@@ -33,7 +37,7 @@ button.onclick = ()=>{
 	}).then(async(data)=>{
 		await wait(1000);
 		const val = data + 10;
-		output.innerText = `Result :${val}`;
+		output.innerText = `Final Result :${val}`;
 		return val;
 	})
 }
