@@ -37,7 +37,7 @@ button.onclick = ()=>{
 	}).then(async(data)=>{
 		await wait(1000);
 		const val = data + 10;
-		output.innerText = `Final Result :${val}`;
+		output.innerText = `Final Result: ${val}`;
 		return val;
 	})
 }
